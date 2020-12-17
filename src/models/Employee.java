@@ -9,13 +9,8 @@ package models;
  *
  * @author johntroidabejero
  */
-public class Medicine {
-    int medicineid;
-    String brand;
-    int day;
-    int month;
-    int year;
-    String description;
-    int mgs;
-    String type;
+public class Employee {
+    String userid;
+    String gender;
+    int 
 }
