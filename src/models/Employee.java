@@ -5,6 +5,8 @@
  */
 package models;
 
+import java.util.Date;
+
 /**
  *
  * @author johntroidabejero
@@ -13,9 +15,7 @@ public class Employee {
     String userid;
     String name;
     String gender;
-    int day;
-    int month;
-    int year;
+    Date birthday;
     String address;
     int cnunmber;
     String email;
