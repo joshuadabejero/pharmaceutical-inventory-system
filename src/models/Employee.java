@@ -11,6 +11,14 @@ package models;
  */
 public class Employee {
     String userid;
+    String name;
     String gender;
-    int 
+    int day;
+    int month;
+    int year;
+    String address;
+    int cnunmber;
+    String email;
+    String username;
+    String password;
 }

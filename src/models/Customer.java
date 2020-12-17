@@ -10,9 +10,8 @@ package models;
  * @author johntroidabejero
  */
 public class Customer {
-    
+    int customerid;
     String name;
-    String item;
-    int qtty;
+    String address;
     
 }
