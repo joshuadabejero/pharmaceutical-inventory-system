@@ -10,5 +10,7 @@ package models;
  * @author johntroidabejero
  */
 public class Medications {
-    
+    int medicationid;
+    String name;
+    String description;
 }
