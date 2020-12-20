@@ -9,7 +9,7 @@ package models;
  *
  * @author johntroidabejero
  */
-public class Medications {
+public class Medication {
     int medicationid;
     String name;
     String description;
