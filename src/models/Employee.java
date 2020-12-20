@@ -12,13 +12,13 @@ import java.util.Date;
  * @author johntroidabejero
  */
 public class Employee {
-    String userid;
-    String name;
-    String gender;
-    Date birthday;
-    String address;
-    int cnunmber;
-    String email;
-    String username;
-    String password;
+    public String employeeid;
+    public String name;
+    public String gender;
+    public Date birthday;
+    public String address;
+    public String cnunmber;
+    public String email;
+    public String username;
+    public String password;
 }

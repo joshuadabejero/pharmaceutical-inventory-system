@@ -24,4 +24,15 @@ public class Database {
             System.out.println("VendorError: " + ex.getErrorCode());
         }
     }
+    
+    public void disconnect() {
+        try {
+            connection.close();
+            System.out.println("MYSQL: Disconnected Successfully");
+        } catch (SQLException ex) {
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+    }
 }
