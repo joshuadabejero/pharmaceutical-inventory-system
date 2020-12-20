@@ -15,8 +15,8 @@ public class Orders {
     int orderid;
     Date receipt;
     int medicineid;
-    int quatinty;
+    int quantity;
     int cost;
-    int customeid;
+    int customerid;
     int employee;
 }
