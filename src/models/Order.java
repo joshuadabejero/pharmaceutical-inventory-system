@@ -11,12 +11,12 @@ import java.util.Date;
  *
  * @author johntroidabejero
  */
-public class Orders {
-    int orderid;
-    Date receipt;
-    int medicineid;
-    int quantity;
-    int cost;
-    int customerid;
-    int employee;
+public class Order {
+    public int orderid;
+    public Date receipt;
+    public int medicineid;
+    public int quantity;
+    public int cost;
+    public int customerid;
+    public int employee;
 }

@@ -5,11 +5,10 @@
  */
 
 package controllers;
-import models.Medicines;
+import models.Medicine;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
-import java.sql.Date;
 /**
  *
  * @author johntroidabejero
@@ -18,7 +17,7 @@ public class Medicines {
     Database database = new Database();
     
     public String register(int medicineid, String name, String brand, int price, int quantity, int weight, String type, boolean steriod, String description, java.util.Date expiration, int medicationid) throws SQLException {
-        database.connect;
+        database.connect();
 
         String result = null;
         String sql = "INSERT INTO medicines (medicineid, name, brand, price, quantity, weight, type, steriod, description, expiration, medicationid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -30,7 +29,7 @@ public class Medicines {
         statement.setInt(5, quantity);
         statement.setInt(6, weight);
         statement.setString(7, type);
-        statement.setboolean(8, steriod);
+        statement.setBoolean(8, steriod);
         statement.setString(9, description);
         java.sql.Date SQLDate = new java.sql.Date(expiration.getTime());
         statement.setDate(10, (java.sql.Date) SQLDate);
@@ -46,8 +45,8 @@ public class Medicines {
         return result;
     }
 
-    public Employee searchById(int medicineid) throws SQLException {
-        Medicine medicine = new medicine();
+    public Medicine searchById(int medicineid) throws SQLException {
+        Medicine medicine = new Medicine();
         database.connect();
 
         String sql = "SELECT medicineid, name, brand, price, quantity, weight, type, steriod, description, expiration, medicationid=? ";
@@ -55,24 +54,24 @@ public class Medicines {
         statement.setInt(1, medicineid);
         ResultSet result = statement.executeQuery(sql);
         while (result.next()) {
-            medicine.medicineid = result.getString("medicineid");
+            medicine.medicineid = result.getInt("medicineid");
             medicine.name = result.getString("name");
             medicine.brand = result.getString("brand");
             medicine.quantity = result.getInt("quantity");
             medicine.weight = result.getInt("weight");
             medicine.type = result.getString("type");
-            medicine.steriod = result.getboolean("steriod");
+            medicine.steriod = result.getBoolean("steriod");
             medicine.description = result.getString("description");
-            medicine.expiration = result.getString("expiration");
-            medicine.medicationid = result.getString("medicationid");
+            medicine.expiration = result.getDate("expiration");
+            medicine.medicationid = result.getInt("medicationid");
         }
 
         database.disconnect();
 
-        return employee;
+        return medicine;
     }
 
-    public StringUpdateById(int medicineid, String name, String brand, int price, int quantity, int weight, String type, boolean steriod, String description, java.util.Date expiration, int medicationid) throws SQLException {
+    public String updateById(int medicineid, String name, String brand, int price, int quantity, int weight, String type, boolean steriod, String description, java.util.Date expiration, int medicationid) throws SQLException {
         database.connect();
         
         String result = null;
@@ -85,7 +84,7 @@ public class Medicines {
         statement.setInt(5, quantity);
         statement.setInt(6, weight);
         statement.setString(7, type);
-        statement.setboolean(8, steriod);
+        statement.setBoolean(8, steriod);
         statement.setString(9, description);
         java.sql.Date SQLDate = new java.sql.Date(expiration.getTime());
         statement.setDate(10, (java.sql.Date) SQLDate);

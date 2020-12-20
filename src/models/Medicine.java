@@ -12,15 +12,15 @@ import java.util.Date;
  * @author johntroidabejero
  */
 public class Medicine {
-    int medicineid;
-    String name;
-    String brand;
-    int price;
-    int quantity;
-    int weight;
-    String type;
-    boolean steriod;
-    String description;
-    Date expiration;
-    int medicationid;
+    public int medicineid;
+    public String name;
+    public String brand;
+    public int price;
+    public int quantity;
+    public int weight;
+    public String type;
+    public boolean steriod;
+    public String description;
+    public Date expiration;
+    public int medicationid;
 }

@@ -5,19 +5,18 @@
  */
 
 package controllers;
-import models.Orders;
+import models.Order;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
-import java.sql.Date;
 /**
  *
  * @author johntroidabejero
  */
-public class Medications {
+public class Orders {
     Database database = new Database();
     
-    public String register(int orderid, java.util.Date receipt, int medicineid, int quatinty, int cost, int customerid, int employee) throws SQLException {
+    public String register(int orderid, java.util.Date receipt, int medicineid, int quantity, int cost, int customerid, int employee) throws SQLException {
         database.connect();
 
         String result = null;
@@ -42,34 +41,34 @@ public class Medications {
         return result;
     }
 
-    public Orders searchById(int employeeid) throws SQLException {
-        Orders order = new Orders();
+    public Order searchById(int orderid) throws SQLException {
+        Order order = new Order();
         database.connect();
         
-        String sql = "SELECT orderid, receipt, medicineid, quatinty, cost, customerid, employee, FROM employees WHERE orderid=?";
+        String sql = "SELECT orderid, receipt, medicineid, quantity, cost, customerid, employee, FROM employees WHERE orderid=?";
         PreparedStatement statement = database.connection.prepareStatement(sql);
         statement.setInt(1, orderid);
         ResultSet result = statement.executeQuery(sql);
         while (result.next()) {
-            employee.orderid = result.getInt("orderid");
-            employee.receipt = result.getDate("receipt");
-            employee.medicineid = result.getInt("medicineid");
-            employee.quatinty = result.getInt("quantity");
-            employee.cost = result.getInt("cost");
-            employee.customerid = result.getInt("customerid");
-            employee.employee = result.getInt("employee");
+            order.orderid = result.getInt("orderid");
+            order.receipt = result.getDate("receipt");
+            order.medicineid = result.getInt("medicineid");
+            order.quantity = result.getInt("quantity");
+            order.cost = result.getInt("cost");
+            order.customerid = result.getInt("customerid");
+            order.employee = result.getInt("employee");
         }
 
         database.disconnect();
         
-        return employee;
+        return order;
 }
     
-public String updateById(int orderid, java.util.Date receipt, int medicineid, int quatinty, int cost, int customerid, int employee) throws SQLException {
+public String updateById(int orderid, java.util.Date receipt, int medicineid, int quantity, int cost, int customerid, int employee) throws SQLException {
         database.connect();
         
         String result = null;
-        String sql = "UPDATE order SET orderid=?, receipt=?, medicineid=?, quatinty=?, cost=?, customerid=?, employee=? WHERE username=?;"
+        String sql = "UPDATE order SET orderid=?, receipt=?, medicineid=?, quantity=?, cost=?, customerid=?, employee=? WHERE username=?";
         PreparedStatement statement = database.connection.prepareStatement(sql);
         statement.setInt(1, orderid);
         java.sql.Date SQLDate = new java.sql.Date(receipt.getTime());
