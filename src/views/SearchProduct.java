@@ -9,12 +9,12 @@ package views;
  *
  * @author Jonel
  */
-public class search extends javax.swing.JPanel {
+public class SearchProduct extends javax.swing.JPanel {
 
     /**
      * Creates new form search
      */
-    public search() {
+    public SearchProduct() {
         initComponents();
     }
 
@@ -132,9 +132,7 @@ public class search extends javax.swing.JPanel {
                                     .addComponent(jTextField4)
                                     .addComponent(jTextField5)
                                     .addComponent(jTextField6)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addComponent(jLabel7))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
