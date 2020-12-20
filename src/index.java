@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import controllers.Database;
 
 /**
  *
@@ -10,6 +11,7 @@
  */
 public class index {
     public static void main( String args[] ) {
-        System.out.println("Hello World!");
+        Database database = new Database();
+        database.connect();
     }
 }

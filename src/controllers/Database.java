@@ -14,9 +14,9 @@ import java.sql.SQLException;
  */
 public class Database {
     Connection connection;
-    void connect() {
+    public void connect() {
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/pis_17122020?user=root&password=");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/pis_17122020?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&user=root&password=");
             System.out.println("MYSQL: Connected Successfully");
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
